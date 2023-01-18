@@ -6,7 +6,7 @@
             <div class="menu"><br><br>
                 <section>
                     <h3>Categoria de producto</h3>
-                    <hr width=300px size=5 color="#FF0000"><br>
+                    <hr width=85% size=5 color="#FF0000"><br>
                     <nav> <a routerLink="/unifomress">
                             <h5>Uniformes</h5>
                         </a>
@@ -67,14 +67,8 @@
                 </section>
             </div>
         </div>
-
         <div class="col-sm-9">
-            <br><br><br>
-            <br><br>
-            
-                
-            
-            <div class="ecomerce container-fluid" style="padding-left:0px; padding-right:0px;margin-top: 130px;">
+            <div class="ecomerce container-fluid" style="padding-left:0px; padding-right:0px;">
                 <span class="p-input-icon-right w-100">
                     <i (click)="search()" class="pi pi-search"></i>
                     <input class="w-100" type="text" [(ngModel)]="textSearch" (input)="search()" pInputText>
@@ -83,20 +77,6 @@
                 <div *ngIf="load" class="row animate__animated animate__fadeIn animate__slow">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1]">
                         <div class="product-grid-item card">
-                            <div class="product-grid-item-top">
-                                <div>
-                                    <p-skeleton width="30%" height="15px"></p-skeleton>
-                                </div>
-                            </div>
-                            <div class="product-grid-item-content">
-                                <p-skeleton width="80%" height="150px" class="reload-center"></p-skeleton>
-                                <div class="product-name">
-                                    <p-skeleton width="50%" height="25px" class="reload-center my-4"></p-skeleton>
-                                </div>
-                                <div class="w-25 d-flex align-items-center">
-                                    <p-skeleton width="30%" height="40px"></p-skeleton>
-                                </div>
-                            </div>
                             <div>
                                 <p-skeleton width="30%" height="40px" class="reload-rigth"></p-skeleton>
 
@@ -111,9 +91,6 @@
                     <ng-template pTemplate="header">
                         <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
                             <div class="row align-items-center">
-                                <!-- <div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 text-center">
-                                    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
-                                </div> -->
                                 <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
                                     <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Ordenar por"
                                         (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown>
@@ -155,12 +132,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--                                 <div class="product-list-action row">
-                                    <span *ngIf="product.priceWithout != product.priceDisc" class="product-price">${{product.priceWithout| number: '.0'}} {{product.discount*100| number: '.0'}}%</span><br>
-                                    <span class="product-price">${{product.priceDisc | number: '.0'}}</span>
-                                    <p-button icon="pi pi-eye" label="Ver producto" (onClick)="showDialog(product)"></p-button>
-                                    <p-button icon="pi pi-shopping-cart" label="Agregar" (onClick)="validSession(product)"></p-button>
-                                </div> -->
                             </div>
                         </div>
                     </ng-template>
@@ -169,12 +140,6 @@
                         <div class="lg:col-4 md:col-6 sm:col-12 animate__animated animate__fadeIn animate__slow"
                             style=" padding-right:10px">
                             <div class="product-grid-item card">
-                                <a>
-                                    <i class="fa-duotone fa-eye"></i>
-     <!--                                     <p-button type="button" styleClass="p-button-help p-button-rounded"
-                                        icon="pi pi-cog">
-                                    </p-button> -->
-                                </a>
                                 <img src="assets/img/modelo 3.png" />
 
                                 <div class="row">
@@ -259,11 +224,6 @@
                                     class="p-button-raised p-button-secondary p-button-text"></button>
                                 <button pButton pRipple type="button" label="XL"
                                     class="p-button-raised p-button-secondary p-button-text"></button>
-
-
-
-                                <!--                             <p-dropdown [options]="product.options" [(ngModel)]="product.option" optionLabel="name" appendTo="body"></p-dropdown>
- -->
                             </div>
                             <div *ngIf="product.options.length==0" style="height: 42px;"> </div>
                             <br>
