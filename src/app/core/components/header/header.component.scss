@@ -1,116 +1,6 @@
-// //@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
-// body {
-//     font-family: 'Poppins', sans-serif;
-// }
-
-// .mitad {
-//     background-size: cover;
-//     background: #FF62C7;
-//     color: #FF62C7;
-// }
-
-// .text {
-//     border-bottom: 1px solid #000;
-//     box-shadow: 0px 3px 0.5px rgb(222, 222, 222);
-// }
-
-// .text h1 {
-//     font-weight: 750;
-//     font-size: 5vw;
-// } 
-
-// :host ::ng-deep {
-//     .p-dropdown:hover {
-//         box-shadow: none !important;
-//         border-color: #000 !important;
-//     }
-
-//     .p-dropdown:not(.p-disabled).p-focus {
-//         outline: 0 none;
-//         outline-offset: 0;
-//         box-shadow: 0 0 0 1px #fff !important;
-//         border-color: #000 !important;
-//     }
-// }
-
-// .color {
-//     font-size: 4vw;
-
-//     text-shadow: 0px 3px 4px rgb(162, 162, 162);
-// }
-
-// .color-arriba {
-//     background: #ffffff;
-//     color: #ffffff;
-//     background-color: #ffffff;
-// }
-// .navbar-toggler{
-// top: 10px;
-// left: 400px;
-// }
-
-
-// .text a {
-//     top: 70px;
-//     right: 1000px;
-// }
-
-// .paginas ul {
-//     list-style: none;
-// }
-
-// .menu>li {
-
-//     display: inline-block;
-// }
-
-// .menu>li>a {
-//     display: block;
-//     color: #BD88F2;
-//     padding: 15px 20px;
-//     text-decoration: none;
-// }
-
-// .menu li a:hover {
-
-//     color: #BD88F2;
-// }
-
-// .navbar {
-//     padding-top: 1rem !important;
-//     padding-bottom: 1rem !important;
-
-// }
-
-// .search-movil {
-//     display: none !important;
-// }
-
-// .search-desk {
-//     display: flex !important;
-// }
-
-// .action-desk {
-//     display: block !important;
-// }
-
-// @media screen and (max-width: 768px) {
-//     .search-movil {
-//         display: flex !important;
-//     }
-
-//     .navbar {
-//         padding-top: 0.5rem !important;
-//     }
-
-//     .search-desk {
-//         display: none !important;
-//     }
-
-//     .action-desk {
-//         display: none !important;
-//     }
-// }
+ body {
+     font-family: 'Poppins', sans-serif;
+ }
 
 .tittle{
     margin: 2rem 0;
@@ -141,7 +31,7 @@
     padding: .8rem;
 }
 
-.logo, .menu, .opciones{
+.logo .menu, .opciones{
     display: flex;
 }
 

@@ -397,9 +397,6 @@ padding:1em 1.5em;
             width: 100%;
         }
     }
-    .margin-movil {
-        margin-top: 150px !important;
-    }
     .detail-product {
         img {
             width: 100% !important;
@@ -412,7 +409,10 @@ padding:1em 1.5em;
         }
     }
 }
-
+.container{
+    padding-right: 0;
+    padding-left: 0;
+}
 .ecomerce {
     margin-top: 6rem;
 }
@@ -464,26 +464,21 @@ body{
     width: 500px;
 }
 .inicio_session {
-    margin-top: 350px;
-    margin-left: 20%;
     color: #FF62C7;
-
 }
 .contraseña{
     color: #FF62C7;
-    margin-top: 100px;
 }
 .texban{
     color: #FF62C7;
 
 }
 .texban1{
-    margin-top: 200px;
-    margin-left: 20px;
+
 }
 .banner1{
     
-    height: 700px;
+    height: 100vw;
     background: linear-gradient(#FF62C7, #ff74ce, #ffffff);
 }
 .banner1-Text h1{
@@ -493,7 +488,6 @@ body{
     
 }
 .banner1-Text h2{
-     margin-top: 20px;
      margin-left: 5%;
      color: #fff;
     font-weight: 300;
@@ -501,15 +495,15 @@ body{
     
 }
 
-.p-button-help1{
-    margin-left: 40%;
-    margin-top: 50px;
+.p-button-help{
+    
     background-color: #9747FF; 
+    align-items: center;
 }
 .p-button-help2{
+    left: 35%;
         background-color: #9747FF;
-        margin-left: 15%;
-        margin-top: 20px;
+        align-items: center;
     }
 
 .error-message {
@@ -521,7 +515,6 @@ body{
 
 @media screen and (max-width: 576px) {
     .margin-movil {
-        margin-top: 150px !important;
     }
     .h-movil {
         height: 100% !important;

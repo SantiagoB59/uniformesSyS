@@ -11,11 +11,13 @@ body {
     .p-toolbar {
         background: #000 !important;
         border: 1px solid #000 !important;
-        padding: 1rem;
         border-radius: 3px;
     }
 }
-
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
 .card {
     padding: 2rem;
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
@@ -27,5 +29,4 @@ body {
     background-color: #fff;
     border-top: 1px solid #dee2e6;
     color: #869099;
-    padding: 1rem;
 }

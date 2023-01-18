@@ -43,12 +43,7 @@ body{
     .categoria3 {
         margin-left: 40px;
     }
-    .col-sm-3{
-        margin-top: 250px;
-    }
-    .col-sm-9{
-        margin-top: 100px;
-    }
+
     .product-name {
         font-size: 1.5rem;
         font-weight: 700;
@@ -140,11 +135,10 @@ body{
             justify-content: space-between;
         }
         img {
-            width: 255px;
+            width: 100%;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-            margin: 2rem 0;
-            object-fit: contain;
-            height: 180px;
+            
+            
         }
         .product-grid-item-content {
             text-align: center;
@@ -271,9 +265,6 @@ body{
     }
 }
 
-.ecomerce {
-    margin-top: 6rem;
-}
 
 .detail-product {
     img {

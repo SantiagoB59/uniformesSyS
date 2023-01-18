@@ -2,7 +2,6 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div *ngIf="view==1">
             <div class="inicio_session" style="height: calc(100vh - 470px);">
-    
                 <div class="col-12">
                     <div class="row">
                         <form [formGroup]="viewForm1">
@@ -27,7 +26,7 @@
                             <div
                                 class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block">
                                 <button (click)="verify()" pButton type="button" label="Iniciar sesión"
-                                    class="p-button-help2"></button>
+                                    class="p-button-help"></button>
                             </div>
                         </form>
                     </div>
@@ -37,23 +36,17 @@
 
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="container margin-movil" style="margin-top: 100px;">
+        <div class="container margin-movil">
             <div *ngIf="view==1">
-        
                 <div class="banner1">
-                    <h1 class="texban">hola</h1>
                     <div class="banner1-Text">
-                        
                             <h1 class="texban1">
                                 No tienes una cuenta?
-                            </h1>
-                        
-                        
+                            </h1> 
                         <h2>Deseas registrarte?</h2>
                     </div>
                     <button pButton (click)="registerbuton()" pButton type="button" label="Registrate"
-                        class="p-button-help1"></button>
-        
+                        class="p-button-help2 align-items-center"></button>
                 </div>
             </div>
         </div>
@@ -61,7 +54,7 @@
 </div>
 
 
-<div class="container margin-movil" style="margin-top: 100px;">
+<div class="container margin-movil">
     <div class="row text-center animate__animated animate__fadeIn" *ngIf="view==1 || view==2">
     </div>
     

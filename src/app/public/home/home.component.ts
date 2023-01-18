@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   iniSession = false;
   products: any[] = [];
 
+
   sortOptions: SelectItem[] = [];
 
   sortOrder: number = 0;
@@ -37,7 +38,7 @@ export class HomeComponent implements OnInit {
   faNext = faArrowRightLong;
   banner: any[] = [];
   textSearch = '';
-
+  load=true;
   cities: City[] = [];
 
   selectedCity: City = <City>{};
@@ -55,6 +56,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.load = false;
+    }, 500);
     this.getBanner()
     this.procedure.custom('randomProduct', {num: 6}).subscribe((data: any[]) => {
       // console.log(data);

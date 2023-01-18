@@ -149,7 +149,7 @@
     </h1>
 </div>
 <div class="content">
-    
+
     <a class="navbar-brand pc" routerLink="/home">
         <img src="assets/img/logoSYS.png" width="80px" alt="logo">
     </a>
@@ -159,29 +159,28 @@
         <a routerLink="/uniformes">Uniformes</a>
     </div>
     <div class="opciones pc">
-        <a  routerLink="/search" class="ml-3">
+        <a routerLink="/search" class="ml-3">
             <img src="assets/img/buscar.png" width="25px" alt="">
         </a>
-        <a *ngIf="iniSession"  routerLink="/cart" class="ml-3">
+        <a *ngIf="iniSession" routerLink="/cart" class="ml-3">
             <img src="assets/img/compra.png" width="27px" alt="">
         </a>
-        <a  *ngIf="!iniSession" routerLink="/login-register">
+        <a *ngIf="!iniSession" routerLink="/login-register">
             <img src="assets/img/inisesion.png" width="27px" alt=""></a>
-        <a  *ngIf="iniSession" (click)="closeSession()">
+        <a *ngIf="iniSession" (click)="closeSession()">
             <fa-icon class="text-black" [icon]="faOff"></fa-icon>
         </a>
     </div>
-     <button class="movil navbar-toggler" type="button"
-    data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-    aria-controls="offcanvasExample">
-    <fa-icon class="text-black" [icon]="faBars"></fa-icon>
-</button>
+    <button class="movil navbar-toggler" type="button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+        aria-controls="offcanvasExample">
+        <fa-icon class="text-black" [icon]="faBars"></fa-icon>
+    </button>
 </div>
 
 
 
 
-<div class="offcanvas offcanvas-start bg-black" style="width: 60%;" styleClass="p-sidebar-sm" tabindex="-1"
+<div class="offcanvas offcanvas-start bg-white" style="width: 60%;" styleClass="p-sidebar-sm" tabindex="-1"
     id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasExampleLabel">
@@ -189,28 +188,30 @@
                 <img src="assets/img/logoSYS.png" width="50px" alt="">
             </a>
         </h5>
-        <button type="button" class="text-white" data-bs-dismiss="offcanvas" aria-label="Close"
+        <button type="button" class="text-black" data-bs-dismiss="offcanvas" aria-label="Close"
             style="background: transparent; border: none; font-size: 20px !important;">
             <fa-icon [icon]="faClose"></fa-icon>
         </button>
     </div>
     <div class="offcanvas-body">
         <div class="grid">
-            <div *ngIf="!iniSession" class="col-12 text-white" routerLink="/login-register" data-bs-dismiss="offcanvas"
+            <div *ngIf="!iniSession" class="col-12 text-black" routerLink="/login-register" data-bs-dismiss="offcanvas"
                 aria-label="Close">
-
-                <fa-icon class="text-black mr-2" [icon]="faUser"></fa-icon> Inicia sesión
+                <img class="text-black mr-2" src="assets/img/inisesion.png" width="20px" alt="">
+                Inicia sesión
             </div>
-            <div *ngIf="iniSession" class="col-12 text-white" (click)="closeSession()">
-                <fa-icon class="text-white mr-2" [icon]="faOff"></fa-icon> Cerrar sesión
+            <div *ngIf="iniSession" class="col-12 text-black" (click)="closeSession()">
+                <fa-icon class="text-black mr-2" [icon]="faOff"></fa-icon> Cerrar sesión
             </div>
-            <div class="col-12 text-white" routerLink="/cart" data-bs-dismiss="offcanvas" aria-label="Close">
-                <fa-icon class="text-white mr-2" [icon]="faCart"></fa-icon> Carrito
+            <div class="col-12 text-black" routerLink="/cart" data-bs-dismiss="offcanvas" aria-label="Close">
+                <img  class="text-black mr-2" src="assets/img/compra.png" width="20px" alt="">
+                 Carrito
             </div>
-            <div class="col-12 text-white" routerLink="/cart" data-bs-dismiss="offcanvas" aria-label="Close">
-                <fa-icon class="text-white mr-2" [icon]="faUser"></fa-icon> buscar
+            <div class="col-12 text-black" routerLink="/search" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <img  class="text-black mr-2" src="assets/img/buscar.png" width="20px" alt="">
+                buscar
             </div>
         </div>
     </div>
 
-</div> 
+</div>
