@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <div class="text">
+                Que deseas buscar?
+
+            </div>
+        </div>
+        <div class="col-2">
+            <a  routerLink="/home">
+            <img src="assets/img/cerrar.png" alt="">
+        </a>
+        </div>
+    </div>
+
+    <div class="row1">
+        <div class="col-10">
+            <div class="d-flex w-100 search-movil">
+                <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
+                <span class="p-input-icon-right w-100">
+                    <i (click)="search()" class="pi pi-search"></i>
+                    <input class="w-100" type="text" [(ngModel)]="textSearch" (input)="search()" pInputText>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Compra</title>
+    </style>
+</head>
+<body style="color: #000 !important">
+    <div style="width: 100%">
+    	<div style="background-color:#000; height: 50px; padding: 10px;">
+        	<img style="width: 50px;" src="**nav_img**" />
+       	</div>
+        <div style="margin-top: 10px;text-align: center;">
+        	<img src="**info_img**" style="width: 150px;"/>
+            <h4 style="color: #000 !important">¡Muchas gracias por tu compra!</h4>
+            <h2 style="color: #000 !important">Detalle de compra</h2>
+        </div>
+        **client**
+        <table style="width: 100%;
+            margin-top: 20px;
+            border: 1px #000 solid;">
+    <thead style="height: 30px;
+            background-color:#000;
+            color: #fff;">
+        <tr>
+            <th width="25%"></th>
+            <th width="25%">Producto</th>
+            <th width="10%">Talla</th>
+            <th width="10%">Cantidad</th>
+            <th width="25%">Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        **products**
+    <tr>
+        <td colspan="1" style="height: 25px;padding-left: 10px;
+            background-color:#000;
+            color:#fff;
+            font-weight: bold">Total</td>
+        <td style="height: 25px; text-align: center;
+            padding-right: 10px;
+            font-weight: bold" colspan="4" >**total**</td>
+        </tr>
+    </tbody>
+</table>
+    </div>
+</body>
+</html>

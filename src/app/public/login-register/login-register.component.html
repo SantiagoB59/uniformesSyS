@@ -1,0 +1,484 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white animate__fadeInDown animate__animated">
+    <div class="container-fluid">
+      
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 position-relative text-center">
+                    <div class="color-arriba">
+                        <div class="text">
+                            <a class="navbar-brand position-absolute top=10 left=0" href="#" routerLink="/home">
+                                <img src="assets/img/logoSYS.png" width="100px" alt="">
+                            </a>
+
+
+                            <div class="text-center animate__animated animate__fadeIn animate__slow">
+                                <button class="navbar-toggler position-absolute top=10 left=0" type="button"
+                                    data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                                    aria-controls="offcanvasExample">
+                                    <fa-icon class="text-black" [icon]="faBars"></fa-icon>
+                                </button>
+                                <h1 class="color" style="color: black;">
+                                    UNIFORMES SYS   
+                                </h1>
+                                <div class="linea">
+                                    <hr size=4 width="1000">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-8 col-sm-12 col-xs-12">
+
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <nav class="paginas">
+                                <ul class="menu">
+                                    <li><a>
+                                            <h6 class="cursor-pointer" style="font-size: 0.9rem;
+                 color: black;
+                    width: max-content;
+                    display: block;
+                    margin: auto;" routerLink="/tienda">Toda la tienda
+                                            </h6>
+                                        </a></li>
+                                    <li><a>
+                                            <h6 class="cursor-pointer" style="font-size: 0.9rem;
+                    color: black;
+                    width: max-content;
+                    display: block;
+                    margin: auto;" routerLink="/uniformes">Uniformes
+                                            </h6>
+                                        </a></li>
+                                    <li><a>
+                                            <h6 class="cursor-pointer" style="font-size: 0.9rem;
+                    color: black;
+                    width: max-content;
+                    display: block;
+                    margin: auto;" routerLink="/home">Home
+                                            </h6>
+                                        </a></li>
+
+                                </ul>
+
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="action-desk">
+                                    <a href="" routerLink="/search" class="ml-3">
+                                        <img src="assets/img/buscar.png" width="25px" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="action-desk">
+                                    <a href="" routerLink="/cart" class="ml-3">
+                                        <img src="assets/img/compra.png" width="27px" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="action-desk">
+                                    <a href="" *ngIf="!iniSession" routerLink="/login-register">
+                                        <img src="assets/img/inisesion.png" width="27px" alt="">
+                                        <!--                                 <fa-icon class="text-black" [icon]="faUser"></fa-icon>
+                                    --> </a>
+                                    <a href="" *ngIf="iniSession" (click)="closeSession()">
+                                        <fa-icon class="text-black" [icon]="faOff"></fa-icon>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--                       <div class="col">
+                        <div class="action-desk">
+                            <a href="" routerLink="/search" class="ml-3">
+                                <img src="assets/img/buscar.png" width="25px" alt="">
+                            </a>
+                            <a href="" routerLink="/cart" class="ml-3">
+                                <img src="assets/img/compra.png" width="27px" alt="">
+                            </a>
+
+                            <a href="" *ngIf="!iniSession" routerLink="/login-register">
+                                <img src="assets/img/inisesion.png" width="27px" alt="">
+                                                                <fa-icon class="text-black" [icon]="faUser"></fa-icon>
+                             </a>
+                            <a href="" *ngIf="iniSession" (click)="closeSession()">
+                                <fa-icon class="text-black" [icon]="faOff"></fa-icon>
+                            </a>
+                        </div>
+                    </div>  -->
+                </div>
+
+            </div>
+        <!-- </div> -->
+    </div>
+
+
+    <div class="d-flex w-100 search-movil">
+        <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
+        <span class="p-input-icon-right w-100">
+            <i (click)="search()" class="pi pi-search"></i>
+            <input class="w-100" type="text" [(ngModel)]="textSearch" (input)="search()" pInputText>
+        </span>
+    </div>
+</nav>
+<div class="offcanvas offcanvas-start bg-black" style="width: 60%;" styleClass="p-sidebar-sm" tabindex="-1"
+    id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logoSYS.png" width="50px" alt="">
+            </a>
+        </h5>
+        <button type="button" class="text-white" data-bs-dismiss="offcanvas" aria-label="Close"
+            style="background: transparent; border: none; font-size: 20px !important;">
+            <fa-icon [icon]="faClose"></fa-icon>
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="grid">
+            <div *ngIf="!iniSession" class="col-12 text-white" routerLink="/login-register" data-bs-dismiss="offcanvas"
+                aria-label="Close">
+
+                <fa-icon class="text-black mr-2" [icon]="faUser"></fa-icon> Inicia sesión
+            </div>
+            <div *ngIf="iniSession" class="col-12 text-white" (click)="closeSession()">
+                <fa-icon class="text-white mr-2" [icon]="faOff"></fa-icon> Cerrar sesión
+            </div>
+            <div class="col-12 text-white" routerLink="/cart" data-bs-dismiss="offcanvas" aria-label="Close">
+                <fa-icon class="text-white mr-2" [icon]="faCart"></fa-icon> Carrito
+            </div>
+            <div class="col-12 text-white" routerLink="/cart" data-bs-dismiss="offcanvas" aria-label="Close">
+                <fa-icon class="text-white mr-2" [icon]="faUser"></fa-icon> buscar
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- inisisiisisfasdfasd -->
+
+
+
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div *ngIf="view==1">
+            <div class="inicio_session" style="height: calc(100vh - 470px);">
+    
+                <div class="col-12">
+                    <div class="row">
+                        <form [formGroup]="viewForm1">
+                            <div class="col-12 text-center">
+                                <h1>
+                                    Inicia sesión
+                                </h1>
+                            </div>
+                            <div
+                                class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block mb-2 mt-2">
+                                <span class="p-float-label">
+                                    <input type="text" id="inputtext1" pInputText class="w-100" formControlName="email">
+                                    <label for="inputtext1">Ingresa tu correo</label>
+                                </span>
+                                <div class="error-box"
+                                    *ngIf="f1['email'].touched && f1['email'].invalid && f1['email'].errors != null">
+                                    <div class="error-message" *ngIf="f1['email'].errors['required']">Este campo requerido
+                                    </div>
+                                    <div class="error-message" *ngIf="f1['email'].errors['pattern']">Correo invalido</div>
+                                </div>
+                            </div>
+                            <div
+                                class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block">
+                                <button (click)="verify()" pButton type="button" label="Iniciar sesión"
+                                    class="p-button-help2"></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="container margin-movil" style="margin-top: 100px;">
+            <div *ngIf="view==1">
+        
+                <div class="banner1">
+                    <h1 class="texban">hola</h1>
+                    <div class="banner1-Text">
+                        
+                            <h1 class="texban1">
+                                No tienes una cuenta?
+                            </h1>
+                        
+                        
+                        <h2>Deseas registrarte?</h2>
+                    </div>
+                    <button pButton (click)="registerbuton()" pButton type="button" label="Registrate"
+                        class="p-button-help1"></button>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container margin-movil" style="margin-top: 100px;">
+    <div class="row text-center animate__animated animate__fadeIn" *ngIf="view==1 || view==2">
+    </div>
+    
+    <div *ngIf="view==2">
+        <div class="row align-items-center animate__animated animate__fadeIn" style="height: calc(100vh - 470px);">
+            <div class="col-12">
+                <div class="row">
+                    <form [formGroup]="viewForm2">
+                        <div class="col-12 text-center">
+                            <div class="contraseña">
+                                <h1>
+                                     Ingresa tu Contraseña
+                                </h1>
+                        </div><br>
+                        <div
+                            class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block mb-2 mt-2">
+                            <div class="col-12 text-center">
+                                <span class="p-float-label">
+                                    <input type="password" id="inputtext2" pInputText class="w-100"
+                                        formControlName="password">
+                                    <label for="inputtext2">Contraseña</label>
+                                </span>
+                            </div>
+
+                            <div class="error-box"
+                                *ngIf="f2['password'].touched && f2['password'].invalid && f2['password'].errors != null">
+                                <div class="error-message" *ngIf="f2['password'].errors['required']">Este campo
+                                    requerido</div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block">
+                            <button (click)="register()" pButton type="button" label="Iniciar sesión"
+                                class="p-button-help1 btn-lg btn-block mx-auto d-block"></button>
+                            <!--                             <button (click)="register()" pButton type="button" name="" id="" class="btn btn-black btn-lg btn-block mx-auto d-block">Validar contraseña</button>
+ -->
+                        
+</div>
+</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="view==3">
+        <div class="row align-items-center animate__animated animate__fadeIn h-movil"
+            style="height: calc(100vh - 150px);">
+            <form [formGroup]="viewForm3">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h1>
+                                <span>
+                                    <fa-icon [icon]="faLeft" style="position: absolute; left: 15%; cursor: pointer;"
+                                        (click)="back(2)"></fa-icon>
+                                </span> Regístrate
+                            </h1>
+                        </div>
+                        <div
+                            class="offset-lg-2 col-lg-4 offset-md-2 col-md-4 offset-sm-1 col-sm-5 col-xs-10 offset-xs-1 d-block my-3">
+                            <span class="p-float-label">
+                                <p-dropdown id="inputtext7" [options]="types" formControlName="temp_type_identification"
+                                    optionLabel="name" (onChange)="changeType($event)" class="w-100"></p-dropdown>
+                                <!-- <p-dropdown id="inputtext7" [options]="types" [(ngModel)]="selectedTypes" optionLabel="name" (onChange)="changeType()" class="w-100"></p-dropdown> -->
+                                <label for="inputtext7">Tipo de documento</label>
+                            </span>
+                            <div class="error-box"
+                                *ngIf="f3['type_identification'].touched && f3['type_identification'].invalid && f3['type_identification'].errors != null">
+                                <div class="error-message" *ngIf="f3['type_identification'].errors['required']">Este
+                                    campo requerido</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-10 offset-xs-1 d-block my-3">
+                            <span class="p-float-label">
+                                <input type="text" id="inputtext8" pInputText class="w-100" formControlName="document">
+                                <!-- <input type="text" id="inputtext8" pInputText class="w-100" [(ngModel)]="data.document">  -->
+                                <label for="inputtext8">Documento</label>
+                            </span>
+                            <div class="error-box"
+                                *ngIf="f3['document'].touched && f3['document'].invalid && f3['document'].errors != null">
+                                <div class="error-message" *ngIf="f3['document'].errors['required']">Este campo
+                                    requerido</div>
+                            </div>
+                        </div>
+                        <div
+                            class="offset-lg-2 col-lg-4 offset-md-2 col-md-4 offset-sm-1 col-sm-5 col-xs-10 offset-xs-1 d-block my-3">
+                            <span class="p-float-label">
+                                <input type="text" id="inputtext3" pInputText class="w-100"
+                                    formControlName="first_name">
+                                <!-- <input type="text" id="inputtext3" pInputText class="w-100" [(ngModel)]="data.first_name">  -->
+                                <label for="inputtext3">Primer Nombre</label>
+                            </span>
+                            <div class="error-box"
+                                *ngIf="f3['first_name'].touched && f3['first_name'].invalid && f3['first_name'].errors != null">
+                                <div class="error-message" *ngIf="f3['first_name'].errors['required']">Este campo
+                                    requerido</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-10 offset-xs-1 d-block my-3">
+                            <span class="p-float-label">
+                                <input type="text" id="inputtext4" pInputText class="w-100"
+                                    formControlName="second_name">
+                                <!-- <input type="text" id="inputtext4" pInputText class="w-100" [(ngModel)]="data.second_name">  -->
+                                <label for="inputtext4">Segundo Nombre</label>
+                            </span>
+                        </div>
+                        <div
+                            class="offset-lg-2 col-lg-4 offset-md-2 col-md-4 offset-sm-1 col-sm-5 col-xs-10 offset-xs-1 d-block my-3">
+                            <span class="p-float-label">
+                                <input type="text" id="inputtext5" pInputText class="w-100"
+                                    formControlName="first_surname">
+                                <!-- <input type="text" id="inputtext5" pInputText class="w-100" [(ngModel)]="data.first_surname">  -->
+                                <label for="inputtext5">Primer Apellido</label>
+                            </span>
+                            <div class="error-box"
+                                *ngIf="f3['first_surname'].touched && f3['first_surname'].invalid && f3['first_surname'].errors != null">
+                                <div class="error-message" *ngIf="f3['first_surname'].errors['required']">Este campo
+                                    requerido</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-10 offset-xs-1 d-block my-3">
+                            <span class="p-float-label">
+                                <input type="text" id="inputtext6" pInputText class="w-100"
+                                    formControlName="second_surname">
+                                <!-- <input type="text" id="inputtext6" pInputText class="w-100" [(ngModel)]="data.second_surname">  -->
+                                <label for="inputtext6">Segundo Apellido</label>
+                            </span>
+                        </div>
+
+                        <div
+                            class="offset-lg-2 col-lg-4 offset-md-2 col-md-4 offset-sm-1 col-sm-5 col-xs-10 offset-xs-1 d-block my-3">
+                            <span class="p-float-label">
+                                <input type="text" id="inputtext9" pInputText class="w-100" formControlName="gender">
+                                <!-- <input type="text" id="inputtext9" pInputText class="w-100" [(ngModel)]="data.gender">  -->
+                                <label for="inputtext9">Genero</label>
+                            </span>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-10 offset-xs-1 d-block my-3">
+                            <span class="p-float-label">
+                                <input type="text" id="inputtext10" pInputText class="w-100" formControlName="phone">
+                                <!-- <input type="text" id="inputtext10" pInputText class="w-100" [(ngModel)]="data.phone">  -->
+                                <label for="inputtext10">Teléfono</label>
+                            </span>
+                            <div class="error-box"
+                                *ngIf="f3['phone'].touched && f3['phone'].invalid && f3['phone'].errors != null">
+                                <div class="error-message" *ngIf="f3['phone'].errors['required']">Este campo requerido
+                                </div>
+                                <div class="error-message" *ngIf="f3['phone'].errors['pattern']">Debe ser solo numero
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="offset-lg-2 col-lg-8 offset-md-2 col-md-8 offset-sm-1 col-sm-8 col-xs-8 offset-xs-1 d-block my-3">
+                            <span class="p-float-label">
+                                <input type="text" id="inputtext21" pInputText class="w-100" formControlName="address">
+                                <!-- <input type="text" id="inputtext11" pInputText class="w-100" [(ngModel)]="email" readonly>  -->
+                                <label for="inputtext21">Dirección </label>
+                            </span>
+                            <div class="error-box"
+                                *ngIf="f3['address'].touched && f3['address'].invalid && f3['address'].errors != null">
+                                <div class="error-message" *ngIf="f3['address'].errors['required']">Este campo requerido
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="offset-lg-2 col-lg-4 offset-md-2 col-md-4 offset-sm-1 col-sm-5 col-xs-10 offset-xs-1 d-block my-3">
+                            <span class="p-float-label">
+                                <input type="text" id="inputtext11" pInputText class="w-100" formControlName="email">
+                                <label for="inputtext11">Correo</label>
+                            </span>
+                            <div class="error-box"
+                                *ngIf="f3['email'].touched && f3['email'].invalid && f3['email'].errors != null">
+                                <div class="error-message" *ngIf="f3['email'].errors['required']">Este campo requerido
+                                </div>
+                                <div class="error-message" *ngIf="f3['email'].errors['pattern']">Correo invalido</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-10 offset-xs-1 d-block my-3">
+                            <span class="p-float-label">
+                                <input type="text" id="inputtext12" pInputText class="w-100"
+                                    formControlName="confirm_email">
+                                <!-- <input type="confirm_email" id="inputtext12" pInputText class="w-100" [(ngModel)]="confirm_email">  -->
+                                <label for="inputtext12">Confirmar correo</label>
+                            </span>
+                            <div class="error-box"
+                                *ngIf="f3['confirm_email'].touched && f3['confirm_email'].invalid && f3['confirm_email'].errors != null">
+                                <div class="error-message" *ngIf="f3['confirm_email'].errors['required']">Este campo
+                                    requerido</div>
+                                <div class="error-message" *ngIf="f3['confirm_email'].errors['pattern']">Correo invalido
+                                </div>
+                                <div class="error-message" *ngIf="f3['confirm_email'].errors['mustMatch']">Correos no
+                                    coincide</div>
+                            </div>
+                        </div>
+                        <div
+                            class="offset-lg-2 col-lg-4 offset-md-2 col-md-4 offset-sm-1 col-sm-5 col-xs-10 offset-xs-1 d-block my-3">
+                            <span class="p-float-label">
+                                <input type="password" id="inputtext13" pInputText class="w-100"
+                                    formControlName="temp_password">
+                                <!-- <input type="temp_password" id="inputtext12" pInputText class="w-100" [(ngModel)]="temp_password">  -->
+                                <label for="inputtext12">Contraseña</label>
+                            </span>
+                            <div class="error-box"
+                                *ngIf="f3['temp_password'].touched && f3['temp_password'].invalid && f3['temp_password'].errors != null">
+                                <div class="error-message" *ngIf="f3['temp_password'].errors['required']">Este campo
+                                    requerido</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-10 offset-xs-1 d-block my-3">
+                            <span class="p-float-label">
+                                <input type="password" id="inputtext14" pInputText class="w-100"
+                                    formControlName="confirm_password">
+                                <!-- <input type="confirm_password" id="inputtext12" pInputText class="w-100" [(ngModel)]="confirm_password">  -->
+                                <label for="inputtext12">Confirmar contraseña</label>
+                            </span>
+                            <div class="error-box"
+                                *ngIf="f3['confirm_password'].touched && f3['confirm_password'].invalid && f3['confirm_password'].errors != null">
+                                <div class="error-message" *ngIf="f3['confirm_password'].errors['required']">Este campo
+                                    requerido</div>
+                                <div class="error-message" *ngIf="f3['confirm_password'].errors['mustMatch']">
+                                    Contraseñas no coinciden</div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block">
+                            <button (click)="registro()" type="button" name="" id=""
+                                class="btn btn-black btn-lg btn-block mx-auto d-block">Regístrate</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<p-dialog [closable]="false" [modal]="true" [(visible)]="display2">
+    <div class="text-center">
+        <div class="spinner-grow text-white" style="width: 4rem; height: 4rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</p-dialog>
+
+<p-toast position="bottom-center" key="bc" life="2000"></p-toast>
+
+
+
+

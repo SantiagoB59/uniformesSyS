@@ -1,0 +1,148 @@
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white animate__fadeInDown animate__animated">
+     <div class="container-fluid">  
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 position-relative text-center">
+                    <div class="color-arriba">
+                        <div class="text">
+                            <a class="navbar-brand position-absolute top=10 left=0" href="#" routerLink="/home">
+                                <img src="assets/img/logoSYS.png" width="100PX" alt="">
+                            </a>
+                            <div class="text-center animate__animated animate__fadeIn animate__slow">
+                                <button class="navbar-toggler position-absolute top=10 left=0" type="button"
+                                    data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                                    aria-controls="offcanvasExample">
+                                    <fa-icon class="text-black" [icon]="faBars"></fa-icon>
+                                </button>
+                                <h1 class="color" style="color: black;">
+                                    UNIFORMES SYS
+                                </h1>
+                                <div class="linea">
+                                    <hr size=4 width="1000">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-8 col-sm-12 col-xs-12">
+                </div>
+                <div style="position: sticky; top: 0;">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                <nav class="paginas">
+                                    <ul class="menu">
+                                        <li><a>
+                                                <h6 class="cursor-pointer" style="font-size: 0.9rem;
+    
+    
+                     color: black;
+                        width: max-content;
+                        display: block;
+                        margin: auto;" routerLink="/comerce">Toda la tienda
+                                                </h6>
+                                            </a></li>
+                                        <li><a>
+                                                <h6 class="cursor-pointer" style="font-size: 0.9rem;
+                        color: black;
+                        width: max-content;
+                        display: block;
+                        margin: auto;" routerLink="/uniformes">Uniformes
+                                                </h6>
+                                            </a></li>
+                                        <li><a>
+                                                <h6 class="cursor-pointer" style="font-size: 0.9rem;
+                        color: black;
+                        width: max-content;
+                        display: block;
+                        margin: auto;" routerLink="/home">Home
+                                                </h6>
+                                            </a></li>
+    
+                                    </ul>
+    
+                                </nav>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="action-desk">
+                                        <a href="" routerLink="/search" class="ml-3">
+                                            <img src="assets/img/buscar.png" width="25px" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <div class="action-desk">
+                                        <a href="" routerLink="/cart" class="ml-3">
+                                            <img src="assets/img/compra.png" width="27px" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="action-desk">
+                                        <a href="" *ngIf="!iniSession" routerLink="/login-register">
+                                            <img src="assets/img/inisesion.png" width="27px" alt="">
+                                            <!--                                 <fa-icon class="text-black" [icon]="faUser"></fa-icon>
+                                        --> </a>
+                                        <a href="" *ngIf="iniSession" (click)="closeSession()">
+                                            <fa-icon class="text-black" [icon]="faOff"></fa-icon>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+
+    <div class="d-flex w-100 search-movil">
+        <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
+        <span class="p-input-icon-right w-100">
+            <i (click)="search()" class="pi pi-search"></i>
+            <input class="w-100" type="text" [(ngModel)]="textSearch" (input)="search()" pInputText>
+        </span>
+    </div>
+</nav>
+<div class="offcanvas offcanvas-start bg-black" style="width: 60%;" styleClass="p-sidebar-sm" tabindex="-1"
+    id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logoSYS.png" width="50px" alt="">
+            </a>
+        </h5>
+        <button type="button" class="text-white" data-bs-dismiss="offcanvas" aria-label="Close"
+            style="background: transparent; border: none; font-size: 20px !important;">
+            <fa-icon [icon]="faClose"></fa-icon>
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="grid">
+            <div *ngIf="!iniSession" class="col-12 text-white" routerLink="/login-register" data-bs-dismiss="offcanvas"
+                aria-label="Close">
+
+                <fa-icon class="text-black mr-2" [icon]="faUser"></fa-icon> Inicia sesión
+            </div>
+            <div *ngIf="iniSession" class="col-12 text-white" (click)="closeSession()">
+                <fa-icon class="text-white mr-2" [icon]="faOff"></fa-icon> Cerrar sesión
+            </div>
+            <div class="col-12 text-white" routerLink="/cart" data-bs-dismiss="offcanvas" aria-label="Close">
+                <fa-icon class="text-white mr-2" [icon]="faCart"></fa-icon> Carrito
+            </div>
+            <div class="col-12 text-white" routerLink="/cart" data-bs-dismiss="offcanvas" aria-label="Close">
+                <fa-icon class="text-white mr-2" [icon]="faUser"></fa-icon> buscar
+            </div>
+        </div>
+    </div>
+
+</div>

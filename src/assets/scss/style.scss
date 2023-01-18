@@ -1,0 +1,133 @@
+﻿/*
+    Variables
+*/
+
+.text-black {
+    color: #000 !important;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+.bg-black {
+    background: #000 !important;
+}
+
+.bg-white {
+    background: #fff !important;
+}
+
+.text-secondary-one {
+    color: #707070 !important;
+}
+
+.bg-secondary-one {
+    background: #707070 !important;
+}
+
+.text-secondary-two {
+    color: #BCBCBC !important;
+}
+
+.bg-secondary-two {
+    background: #BCBCBC !important;
+}
+
+.text-secondary-three {
+    color: #EAEAEA !important;
+}
+
+.bg-secondary-three {
+    background: #EAEAEA !important;
+}
+
+.bd-example>:last-child {
+    margin-bottom: 0;
+}
+
+.bg-light {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity))!important;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+.navbar>.container-fluid {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, .75rem);
+    padding-left: var(--bs-gutter-x, .75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-light .navbar-brand {
+    color: rgba(0, 0, 0, .9);
+}
+
+.navbar-brand {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.d-inline-block {
+    display: inline-block!important;
+}
+
+.align-text-top {
+    vertical-align: text-top!important;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+input:hover {
+    box-shadow: none !important;
+    border-color: #000 !important;
+}
+
+input:focus {
+    box-shadow: 0 0 0 1px #fff !important;
+    border-color: #000 !important;
+}
+
+.btn-black {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background-color: #707070 !important;
+    box-shadow: 0 0 0 1px #fff !important;
+}
+
+.btn-black:focus {
+    background-color: #000 !important;
+    box-shadow: 0 0 0 1px #fff !important;
+}

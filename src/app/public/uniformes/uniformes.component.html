@@ -1,0 +1,49 @@
+
+<!-- uniformes -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <img src="assets/img/modelo 3.png" alt="">
+        </div>
+        <div class="col-5">
+
+            <div class="product-name">
+                <h2>Nombre del producto</h2>
+            </div>
+            <p>El color negro es súper fácil de combinar
+
+                (al ser un tono neutro, hace un contraste
+
+                perfecto con cualquier otro color), nunca
+
+                pasará de moda además de esto estiliza
+
+                tu figura y es un color que aporta elegancia </p>
+
+            <h4 class="mt-0 mb-3 ">$50.000</h4>
+
+            <div class="w-25" style="display: flex; align-items: center;" *ngIf="product.options.length>0">
+                <span class="mr-2">Talla </span>
+                <button pButton pRipple type="button" label="S"
+                    class="p-button-raised p-button-secondary p-button-text"></button>
+                <button pButton pRipple type="button" label="M"
+                    class="p-button-raised p-button-secondary p-button-text"></button>
+                <button pButton pRipple type="button" label="L"
+                    class="p-button-raised p-button-secondary p-button-text"></button>
+                <button pButton pRipple type="button" label="XL"
+                    class="p-button-raised p-button-secondary p-button-text"></button>
+
+
+
+                   <!--                             <p-dropdown [options]="product.options" [(ngModel)]="product.option" optionLabel="name" appendTo="body"></p-dropdown>
+                      -->
+            </div>
+            <div *ngIf="product.options.length==0" style="height: 42px;"> </div>
+            <br>
+            <!--                 <p-button icon="pi pi-shopping-cart" class="ms-1 add-cart align-items: center;"
+                    (onClick)="validSession(product)">Añadir a carrito</p-button> -->
+        </div>
+
+    </div>
+</div>

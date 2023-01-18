@@ -1,0 +1,297 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+
+            <div class="menu"><br><br>
+                <section>
+                    <h3>Categoria de producto</h3>
+                    <hr width=300px size=5 color="#FF0000"><br>
+                    <nav> <a routerLink="/unifomress">
+                            <h5>Uniformes</h5>
+                        </a>
+                    </nav>
+                    <div class="categoria1">
+                        <nav> <a routerLink="/unifomress">
+                                <p>Uniformes negros<p>
+                            </a>
+                        </nav>
+                        <nav> <a routerLink="/unifomress">
+                                <p>Uniformes morados<p>
+                            </a>
+                        </nav>
+                        <nav> <a routerLink="/unifomress">
+                                <p>Uniformes azules<p>
+                            </a>
+                        </nav>
+                    </div>
+                    <nav> <a routerLink="/unifomress">
+                            <h5>Genero</h5>
+                        </a>
+                    </nav>
+                    <div class="categoria2">
+                        <nav> <a routerLink="/unifomress">
+                                <p>Uniformes Hombre<p>
+                            </a>
+                        </nav>
+                        <nav> <a routerLink="/unifomress">
+                                <p>Uniformes Mujer<p>
+                            </a>
+                        </nav>
+                    </div>
+                    <nav> <a routerLink="/unifomress">
+                            <h5>Estilos</h5>
+                        </a>
+                    </nav>
+                    <div class="categoria3">
+                        <nav> <a routerLink="/unifomress">
+                                <p>Uniformes Clasicos<p>
+                            </a>
+                        </nav>
+                        <nav> <a routerLink="/unifomress">
+                                <p>Uniformes Modernos<p>
+                            </a>
+                        </nav>
+                        <nav> <a routerLink="/unifomress">
+                                <p>Uniformes Multicolores<p>
+                            </a>
+                        </nav>
+                    </div>
+                    <div class="categoria4">
+                        <nav> <a routerLink="/unifomress">
+                                <h5>Promociones</h5>
+                            </a>
+                        </nav>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+
+        <div class="col-sm-9">
+            <br><br><br>
+            <br><br>
+            
+                
+            
+            <div class="ecomerce container-fluid" style="padding-left:0px; padding-right:0px;margin-top: 130px;">
+                <span class="p-input-icon-right w-100">
+                    <i (click)="search()" class="pi pi-search"></i>
+                    <input class="w-100" type="text" [(ngModel)]="textSearch" (input)="search()" pInputText>
+                </span>
+                <br><br>
+                <div *ngIf="load" class="row animate__animated animate__fadeIn animate__slow">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1]">
+                        <div class="product-grid-item card">
+                            <div class="product-grid-item-top">
+                                <div>
+                                    <p-skeleton width="30%" height="15px"></p-skeleton>
+                                </div>
+                            </div>
+                            <div class="product-grid-item-content">
+                                <p-skeleton width="80%" height="150px" class="reload-center"></p-skeleton>
+                                <div class="product-name">
+                                    <p-skeleton width="50%" height="25px" class="reload-center my-4"></p-skeleton>
+                                </div>
+                                <div class="w-25 d-flex align-items-center">
+                                    <p-skeleton width="30%" height="40px"></p-skeleton>
+                                </div>
+                            </div>
+                            <div>
+                                <p-skeleton width="30%" height="40px" class="reload-rigth"></p-skeleton>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p-dataView *ngIf="!load" #dv [value]="products| search: category: name" [paginator]="true" [rows]="6"
+                    filterBy="name" [sortField]="sortField" [sortOrder]="sortOrder" layout="grid"
+                    class="animate__animated animate__fadeIn">
+
+                    <ng-template pTemplate="header">
+                        <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
+                            <div class="row align-items-center">
+                                <!-- <div class="col-lg-1 col-md-1 col-sm-2 col-xs-4 text-center">
+                                    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                                </div> -->
+                                <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+                                    <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Ordenar por"
+                                        (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                    <ng-template let-product pTemplate="listItem" class="row">
+                        <div class="col-12 animate__animated animate__fadeIn animate__slow"
+                            style="padding-left:10px; padding-right:10px">
+                            <div class="product-list-item">
+                                <div class="product-list-detail">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                                            <img src="{{product.photos[0]}}" alt="" *ngIf="product.photos?.length == 1">
+                                            <p-carousel [value]="product.photos" [autoplayInterval]="3000"
+                                                [circular]="true" [showIndicators]="false"
+                                                *ngIf="product.photos?.length != 1">
+                                                <ng-template let-car pTemplate="item">
+                                                    <img src="{{car}}" alt="">
+                                                </ng-template>
+                                            </p-carousel>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-4 col-xs-12">
+                                            <div class="list-movil mt-4">
+                                                <i class="pi pi-tag product-category-icon"></i><span
+                                                    class="product-category">{{product.category}}</span>
+                                                <div class="product-name">{{product.name}}</div>
+                                                <div class="product-description text-left">{{product.description}}</div>
+                                                <div class="w-25 d-flex align-items-center"
+                                                    *ngIf="product.options.length>0">
+                                                    <span class="mr-2">Talla </span>
+                                                    <p-dropdown [options]="product.options" [(ngModel)]="product.option"
+                                                        optionLabel="name" appendTo="body"></p-dropdown>
+                                                </div>
+                                                <div *ngIf="product.options.length==0" style="height: 42px;"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--                                 <div class="product-list-action row">
+                                    <span *ngIf="product.priceWithout != product.priceDisc" class="product-price">${{product.priceWithout| number: '.0'}} {{product.discount*100| number: '.0'}}%</span><br>
+                                    <span class="product-price">${{product.priceDisc | number: '.0'}}</span>
+                                    <p-button icon="pi pi-eye" label="Ver producto" (onClick)="showDialog(product)"></p-button>
+                                    <p-button icon="pi pi-shopping-cart" label="Agregar" (onClick)="validSession(product)"></p-button>
+                                </div> -->
+                            </div>
+                        </div>
+                    </ng-template>
+
+                    <ng-template let-product pTemplate="gridItem">
+                        <div class="lg:col-4 md:col-6 sm:col-12 animate__animated animate__fadeIn animate__slow"
+                            style=" padding-right:10px">
+                            <div class="product-grid-item card">
+                                <a>
+                                    <i class="fa-duotone fa-eye"></i>
+     <!--                                     <p-button type="button" styleClass="p-button-help p-button-rounded"
+                                        icon="pi pi-cog">
+                                    </p-button> -->
+                                </a>
+                                <img src="assets/img/modelo 3.png" />
+
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p-button class="p-button-help" label="Ver mas" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
+                                            (onClick)="showDialog(product)"></p-button>
+
+                                    </div>
+                                    <div class="col-4">
+                                        <p-button icon="pi pi-shopping-cart" class="ml-1"
+                                            [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
+                                            (onClick)="validSession(product)"></p-button>
+
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="mb-1 text-center">Uniforme negro</h2><br>
+                                    <h4 class="mt-0 mb-3 text-center ">$50.000</h4>
+                                </div>
+                            </div>
+                            <div class="product-grid-item-bottom">
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-dataView>
+            </div>
+
+
+
+
+            <!-- ///////////////////////// una vez se agrege el producto -->
+
+
+
+
+
+
+
+            <p-dialog header="Detalle del producto" [(visible)]="display"
+                [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}" [modal]="true">
+                <div class="row">
+                    <div class="col-7">
+                        <div class="detail-product" *ngIf="product">
+                            <img src="assets/img/modelo 3.png" alt="" *ngIf="product.photos?.length == 1">
+                            <p-carousel [value]="product.photos" [autoplayInterval]="3000" [circular]="true"
+                                [showIndicators]="false" *ngIf="product.photos?.length != 1">
+                                <ng-template let-car pTemplate="item">
+                                    <img src="assets/img/modelo 3.png" alt="">
+                                </ng-template>
+                            </p-carousel>
+                        </div>
+
+                    </div>
+                    <div class="col-5">
+                        <div class="detail-product" *ngIf="product">
+                            <div class="product-name">
+                                <h2>Nombre del producto</h2>
+                            </div>
+                            <p>El color negro es súper fácil de combinar
+
+                                (al ser un tono neutro, hace un contraste
+
+                                perfecto con cualquier otro color), nunca
+
+                                pasará de moda además de esto estiliza
+
+                                tu figura y es un color que aporta elegancia </p>
+
+                            <h4 class="mt-0 mb-3 ">$50.000</h4>
+
+                            <div class="w-25" style="display: flex; align-items: center;"
+                                *ngIf="product.options.length>0">
+                                <span class="mr-2">Talla </span>
+                                <button pButton pRipple type="button" label="S"
+                                    class="p-button-raised p-button-secondary p-button-text"></button>
+                                <button pButton pRipple type="button" label="M"
+                                    class="p-button-raised p-button-secondary p-button-text"></button>
+                                <button pButton pRipple type="button" label="L"
+                                    class="p-button-raised p-button-secondary p-button-text"></button>
+                                <button pButton pRipple type="button" label="XL"
+                                    class="p-button-raised p-button-secondary p-button-text"></button>
+
+
+
+                                <!--                             <p-dropdown [options]="product.options" [(ngModel)]="product.option" optionLabel="name" appendTo="body"></p-dropdown>
+ -->
+                            </div>
+                            <div *ngIf="product.options.length==0" style="height: 42px;"> </div>
+                            <br>
+                            <p-button icon="pi pi-shopping-cart" class="ms-1 add-cart align-items: center;"
+                                (onClick)="validSession(product)">Añadir a carrito</p-button>
+                        </div>
+
+                    </div>
+                </div>
+            </p-dialog>
+
+            <p-confirmDialog #cd header="Producto agregado" icon="pi pi-check-circle" [transitionOptions]="'300ms'">
+                <ng-template pTemplate="footer">
+                    <button type="button" pButton class="bg-secondary-one" style="border-color: black;"
+                        label="Seguir comprando" (click)="cd.reject()"></button>
+                    <button type="button" pButton class="bg-black" style="border-color: black;" label="Ir a carrito"
+                        (click)="cd.accept()"></button>
+                </ng-template>
+            </p-confirmDialog>
+
+            <p-dialog class="loading" [closable]="false" [modal]="true" [(visible)]="display2">
+                <div class="text-center">
+                    <div class="spinner-grow text-white" style="width: 4rem; height: 4rem;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </p-dialog>
+        </div>
+
+    </div>
+</div>
