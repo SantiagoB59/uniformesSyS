@@ -1,6 +1,4 @@
-
-
-
+<!-- 
 <nav class="navbar navbar-expand-lg navbar-light bg-white animate__fadeInDown animate__animated">
      <div class="container-fluid">  
             <div class="row">
@@ -89,9 +87,7 @@
                                 <div class="col-3">
                                     <div class="action-desk">
                                         <a href="" *ngIf="!iniSession" routerLink="/login-register">
-                                            <img src="assets/img/inisesion.png" width="27px" alt="">
-                                            <!--                                 <fa-icon class="text-black" [icon]="faUser"></fa-icon>
-                                        --> </a>
+                                            <img src="assets/img/inisesion.png" width="27px" alt=""></a>
                                         <a href="" *ngIf="iniSession" (click)="closeSession()">
                                             <fa-icon class="text-black" [icon]="faOff"></fa-icon>
                                         </a>
@@ -145,4 +141,76 @@
         </div>
     </div>
 
+</div> -->
+
+<div class="tittle">
+    <h1 class="color" style="color: black;">
+        UNIFORMES SYS
+    </h1>
 </div>
+<div class="content">
+    
+    <a class="navbar-brand pc" routerLink="/home">
+        <img src="assets/img/logoSYS.png" width="80px" alt="logo">
+    </a>
+    <div class="menu">
+        <a routerLink="/home">Inicio</a>
+        <a routerLink="/comerce">Toda la tienda</a>
+        <a routerLink="/uniformes">Uniformes</a>
+    </div>
+    <div class="opciones pc">
+        <a  routerLink="/search" class="ml-3">
+            <img src="assets/img/buscar.png" width="25px" alt="">
+        </a>
+        <a *ngIf="iniSession"  routerLink="/cart" class="ml-3">
+            <img src="assets/img/compra.png" width="27px" alt="">
+        </a>
+        <a  *ngIf="!iniSession" routerLink="/login-register">
+            <img src="assets/img/inisesion.png" width="27px" alt=""></a>
+        <a  *ngIf="iniSession" (click)="closeSession()">
+            <fa-icon class="text-black" [icon]="faOff"></fa-icon>
+        </a>
+    </div>
+     <button class="movil navbar-toggler" type="button"
+    data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+    aria-controls="offcanvasExample">
+    <fa-icon class="text-black" [icon]="faBars"></fa-icon>
+</button>
+</div>
+
+
+
+
+<div class="offcanvas offcanvas-start bg-black" style="width: 60%;" styleClass="p-sidebar-sm" tabindex="-1"
+    id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logoSYS.png" width="50px" alt="">
+            </a>
+        </h5>
+        <button type="button" class="text-white" data-bs-dismiss="offcanvas" aria-label="Close"
+            style="background: transparent; border: none; font-size: 20px !important;">
+            <fa-icon [icon]="faClose"></fa-icon>
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="grid">
+            <div *ngIf="!iniSession" class="col-12 text-white" routerLink="/login-register" data-bs-dismiss="offcanvas"
+                aria-label="Close">
+
+                <fa-icon class="text-black mr-2" [icon]="faUser"></fa-icon> Inicia sesión
+            </div>
+            <div *ngIf="iniSession" class="col-12 text-white" (click)="closeSession()">
+                <fa-icon class="text-white mr-2" [icon]="faOff"></fa-icon> Cerrar sesión
+            </div>
+            <div class="col-12 text-white" routerLink="/cart" data-bs-dismiss="offcanvas" aria-label="Close">
+                <fa-icon class="text-white mr-2" [icon]="faCart"></fa-icon> Carrito
+            </div>
+            <div class="col-12 text-white" routerLink="/cart" data-bs-dismiss="offcanvas" aria-label="Close">
+                <fa-icon class="text-white mr-2" [icon]="faUser"></fa-icon> buscar
+            </div>
+        </div>
+    </div>
+
+</div> 
