@@ -1,9 +1,10 @@
+<!-- //////////////////////////////77 -->
 
 <div class="container">
     <div class="row">
         <div class="col-sm-3">
 
-            <div class="menu"><br><br>
+            <div class="menuint"><br><br>
                 <section>
                     <h3>Categoria de producto</h3>
                     <hr width=85% size=5 color="#FF0000"><br>
@@ -73,6 +74,7 @@
                     <i (click)="search()" class="pi pi-search"></i>
                     <input class="w-100" type="text" [(ngModel)]="textSearch" (input)="search()" pInputText>
                 </span>
+                
                 <br><br>
                 <div *ngIf="load" class="row animate__animated animate__fadeIn animate__slow">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1]">
@@ -142,14 +144,14 @@
                             <div class="product-grid-item card">
                                 <img src="assets/img/modelo 3.png" />
 
-                                <div class="row">
+                                <div class="row ">
                                     <div class="col-8">
-                                        <p-button class="p-button-help" label="Ver mas" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
-                                            (onClick)="showDialog(product)"></p-button>
+                                        <p-button class="my-4 b-w-80" label="Ver mas" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
+                        (onClick)="showDialog(product)"></p-button>
 
                                     </div>
                                     <div class="col-4">
-                                        <p-button icon="pi pi-shopping-cart" class="ml-1"
+                                        <p-button icon=" pi pi-shopping-cart" class="my-5 b-w-80b"
                                             [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
                                             (onClick)="validSession(product)"></p-button>
 
@@ -157,7 +159,7 @@
                                 </div>
                                 <div>
                                     <h2 class="mb-1 text-center">Uniforme negro</h2><br>
-                                    <h4 class="mt-0 mb-3 text-center ">$50.000</h4>
+                                    <h4 class=" mt-0 mb-3 text-center ">$50.000</h4>
                                 </div>
                             </div>
                             <div class="product-grid-item-bottom">
@@ -170,21 +172,11 @@
                 </p-dataView>
             </div>
 
-
-
-
             <!-- ///////////////////////// una vez se agrege el producto -->
-
-
-
-
-
-
-
             <p-dialog header="Detalle del producto" [(visible)]="display"
                 [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}" [modal]="true">
                 <div class="row">
-                    <div class="col-7">
+                    <div class="lg:col-7 md:col-7 sm:col-12">
                         <div class="detail-product" *ngIf="product">
                             <img src="assets/img/modelo 3.png" alt="" *ngIf="product.photos?.length == 1">
                             <p-carousel [value]="product.photos" [autoplayInterval]="3000" [circular]="true"
@@ -196,7 +188,7 @@
                         </div>
 
                     </div>
-                    <div class="col-5">
+                    <div class="lg:col-5 md:col-5 sm:col-12">
                         <div class="detail-product" *ngIf="product">
                             <div class="product-name">
                                 <h2>Nombre del producto</h2>
@@ -219,15 +211,15 @@
                                 <button pButton pRipple type="button" label="S"
                                     class="p-button-raised p-button-secondary p-button-text"></button>
                                 <button pButton pRipple type="button" label="M"
-                                    class="p-button-raised p-button-secondary p-button-text"></button>
+                                    class="espacio p-button-raised p-button-secondary p-button-text"></button>
                                 <button pButton pRipple type="button" label="L"
-                                    class="p-button-raised p-button-secondary p-button-text"></button>
+                                    class="espacio1 p-button-raised p-button-secondary p-button-text"></button>
                                 <button pButton pRipple type="button" label="XL"
-                                    class="p-button-raised p-button-secondary p-button-text"></button>
+                                    class="espacio2 p-button-raised p-button-secondary p-button-text"></button>
                             </div>
                             <div *ngIf="product.options.length==0" style="height: 42px;"> </div>
                             <br>
-                            <p-button icon="pi pi-shopping-cart" class="ms-1 add-cart align-items: center;"
+                            <p-button icon="pi pi-shopping-cart" class="my-5 b-w-80b ms-1 add-cart align-items: center;"
                                 (onClick)="validSession(product)">Añadir a carrito</p-button>
                         </div>
 
@@ -237,9 +229,9 @@
 
             <p-confirmDialog #cd header="Producto agregado" icon="pi pi-check-circle" [transitionOptions]="'300ms'">
                 <ng-template pTemplate="footer">
-                    <button type="button" pButton class="bg-secondary-one" style="border-color: black;"
+                    <button type="button" pButton style="color: black; background: #C3F3FD; border-color: black;"
                         label="Seguir comprando" (click)="cd.reject()"></button>
-                    <button type="button" pButton class="bg-black" style="border-color: black;" label="Ir a carrito"
+                    <button type="button" pButton  style="background: #FF62C7; border-color: black;" label="Ir a carrito"
                         (click)="cd.accept()"></button>
                 </ng-template>
             </p-confirmDialog>

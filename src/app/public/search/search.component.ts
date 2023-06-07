@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faPowerOff, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCartShopping, faPowerOff, faUser, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { ProceduresService } from 'src/app/core/services/procedures.service';
 @Component({
   selector: 'app-search',
@@ -11,6 +11,10 @@ export class SearchComponent implements OnInit {
   textSearch = '';
   faOff = faPowerOff;
   faClose = faXmark;
+  faUser = faUser;
+  faCart = faCartShopping;
+  faBars = faBars;
+  iniSession = false;
   cities: City[] = [];
 
   selectedCity: City = <City>{};
@@ -19,6 +23,10 @@ export class SearchComponent implements OnInit {
     }
 
   ngOnInit(): void {
+  }
+  closeSession(){
+    sessionStorage.clear();
+    window.location.reload();
   }
   search(){
     const data = {

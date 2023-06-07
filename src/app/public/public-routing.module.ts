@@ -10,21 +10,23 @@ import { NuestrosHorariosComponent } from './nuestros-horarios/nuestros-horarios
 import { SearchComponent } from './search/search.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { TiemposDeEntregaComponent } from './tiempos-de-entrega/tiempos-de-entrega.component';
-import { TiendaComponent } from './tienda/tienda.component';
-import { UniformesComponent } from './uniformes/uniformes.component';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
   /* {
     path: 'home',
     component: HomeComponent
   }, */
-  {
-    path: 'login-register',
+   {
+    path: 'login',
     component: LoginRegisterComponent
-  },
-  { path:'uniformes', component: UniformesComponent},
-  { path:'tienda', component: TiendaComponent},
- 
+  }, 
+  /* { path: 'home'    , component: HomeComponent }, */
+   { path: 'registro', component: RegistroComponent },
+  { path: 'login2'   , component: LoginComponent },
+  { path: '**', redirectTo: 'registro' }
+  
 
   
   

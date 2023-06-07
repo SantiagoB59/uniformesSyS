@@ -1,7 +1,37 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
-:host ::ng-deep {
+.espacio{
+    left: 10%;
+}
+.espacio1{
+    left: 20%;
+}
+.espacio2{
+    left: 30%;
+}
+
+ .b-w-80{
+    width: 80%;
+} 
+.mt-0{
+    color: #9995FF;
+}
+:host ::ng-deep .b-w-80 .p-button{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    background: #f6f6f6;
+    color: #000
+}
+:host ::ng-deep .b-w-80b .p-button{
+    width: 100%;
+    border: 1px solid #FF62C7;
+    border-radius: 0;
+    background: #FF62C7;
+    color: rgb(255, 255, 255)
+} 
+
     .p-dropdown {
         width: 100%;
         font-weight: normal;
@@ -30,9 +60,6 @@ body{
        text-decoration: none } 
     .mr-2{
         margin-left: 5px;
-    }
-    .navbar-toggler{
-        margin-top: 400px;
     }
     .categoria1 {
         margin-left: 40px;
@@ -201,7 +228,7 @@ body{
             }
         }
     }
-}
+
 
 .pag-banner {
     width: 0.8rem;
@@ -220,6 +247,9 @@ body{
 }
 
 @media screen and (max-width: 576px) {
+    .menuint{
+        display: none;
+    }
     .list-movil {
         display: block;
         margin: auto;
@@ -250,7 +280,6 @@ body{
         }
     }
     .margin-movil {
-        margin-top: 150px !important;
     }
     .detail-product {
         img {
@@ -276,4 +305,75 @@ body{
         display: block;
         margin: auto;
     }
+}
+
+
+//header
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.tittle{
+   width: 100%;
+   text-align: center;
+   text-shadow: 0px 3px 4px rgb(162, 162, 162);
+}
+
+.tittle h1{
+   font-size: 4vw;
+   font-weight: 750;
+   width: 65%;
+   margin: 0 auto;
+   padding-bottom: 1rem;
+   border-bottom: 1px solid #000;
+}
+
+.content{
+   display: flex;
+   width: 100vw;
+   background-color: #fff;
+   width: 100%;
+   justify-content: space-evenly;
+   align-items: center;
+   position: sticky;
+   top: 0;
+   z-index: 1040;
+   padding: .8rem;
+}
+
+.logo .menu, .opciones{
+   display: flex;
+}
+
+.menu a{
+   margin: 0 2rem;
+}
+
+.opciones a{
+   margin: 0 0.5rem;
+}
+
+a{
+   text-decoration: none;
+   color: #000;
+}
+
+.movil{
+   display: none;
+}
+
+@media screen and (max-width: 768px) {
+   .movil{
+       display: flex;
+   }
+
+   .pc{
+       display: none;
+   }
+
+   .menu a{
+       margin: 0 1rem;
+   }
 }

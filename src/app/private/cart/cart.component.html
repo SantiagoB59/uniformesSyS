@@ -1,27 +1,19 @@
 <div class="container-fluid margin-movil" style="margin-top: 100px;">
     <div class="row text-center mb-3 animate__animated animate__fadeIn animate__slow">
-        <div class="col-lg-10 col-md-10 col-sm-3 col-xs-12">
-            <div class="car">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
+            <div class="car text-center">
                 <h1>
                     Tus productos
                 </h1>
             </div>
         </div>
         <div class="row animate__animated animate__fadeIn animate__slow">
-            <div *ngIf="products.length == 0 && empty" class="col-lg-9 col-md-9 col-sm-8 col-xs-12 list-cart">
+            <div *ngIf="products.length == 0 && empty" class="col-lg-9 col-md-9 col-sm-9 col-xs-12 list-cart">
                 <div class="card position-relative" *ngFor="let product of [1,1,1,1,1]">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-12 m-movil">
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 m-movil">
                                 <p-skeleton width="140px" height="90px" class="reload-center"></p-skeleton>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-5 col-xs-12">
-                                <h4 class="fw-bold1 product-name">
-                                    <p-skeleton width="70%" height="20px"></p-skeleton>
-                                </h4>
-                                <p>
-                                    <p-skeleton width="100%" height="15px"></p-skeleton>
-                                </p>
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 d-flex align-items-center">
                                 <div class="gruop-total-product w-100">
@@ -37,23 +29,22 @@
                     </div>
                 </div>
             </div>
-            <div *ngIf="products.length > 0 && !empty" class="col-lg-9 col-md-9 col-sm-8 col-xs-12 list-cart">
+            <div *ngIf="products.length > 0 && !empty" class="col-lg-9 col-md-9 col-sm-12 col-xs-12 list-cart">
                 <div class="card position-relative" *ngFor="let product of products; index as i">
                     <fa-icon [icon]="faDelete" class="position-absolute cursor-pointer"
                         style="right: 15px;top: 10px;font-size: 25px;"
                         (click)="deleteProduct(product.id_order, product.amount-1, i)"></fa-icon>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-3 col-xs-12 d-flex align-items-center">
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex align-items-center">
                                 <img [src]="product.photo" class="product-cart" width="140px" height="90px" alt="">
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-5 col-xs-12">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <h4 class="fw-bold1 product-name">{{product.name}}</h4>
-                                <!-- <p>{{product.description | slice:0:40}}</p> -->
                                 <p>Talla: {{product.option}}</p>
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 d-flex align-items-center">
-                                <div class="gruop-total-product w-100">
+                                <div class= "gruop-total-product w-100">
                                     <div class="quantity">
                                         <button pButton type="button" class="w-100" icon="pi pi-minus" iconPos="left"
                                             (click)="updateOrder(product.id_order, product.amount-1, i)"></button>
@@ -77,12 +68,11 @@
                 </div>
             </div>
             <div *ngIf="products.length == 0 && !empty"
-                class="col-lg-9 col-md-9 col-sm-8 col-xs-12 text-center list-cart">
+                class="col-lg-9 col-md-9 col-sm-8 col-xs-12 text-center list-cart ">
                 <h2>No hay productos agregados</h2>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 d-flex align-items-center">
-                <div class="row d-block mx-auto w-100">
-                    <div class="det">
+                <div class="row factura col-12">                    
                     <div class="col-12 text-center">
                         <h3 class="fw-bold">Detalles</h3>
                     </div>
@@ -96,23 +86,20 @@
                             <div class="ms-auto">${{total|number}}</div>
                         </div>
                     </div>
-                    <!-- <div class="row"> -->
                     <div class="col-12">
-                        <button pButton class="w-100" type="button" label="Comprar" (click)="buy()"
+                        <button pButton class="w-100 buttonDetalles" type="button" label="Comprar" (click)="buy()"
                             [disabled]="products.length == 0"></button>
                     </div>
                     <div class="col-12">
-                        <button pButton class="w-100" type="button" label="Seguir buscando" (click)="back()"></button>
+                        <button pButton class="w-100 buttonDetalles" type="button" label="Seguir buscando" (click)="back()"></button>
                     </div>
-                    <!-- </div> -->
-                </div>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <form id="gform" method="POST" class="pure-form pure-form-stacked" data-email="example@email.net" #emailSend
+    <form id="gform" method="POST" class="pure-form pure-form-stacked" data-email="uniformessys@gmail.com" #emailSend
         target="res-email" [hidden]="true"
         action="https://script.google.com/macros/s/AKfycbyexpRqL0pleAUu-M881J7aSZwZWY3Amasq6n8U12VEgtJP3dflFqzs86K-mLu_6myQQQ/exec">
         <!-- change the form action to your script url -->
@@ -137,16 +124,16 @@
     <p-confirmDialog #ce key="end" header="Información" icon="pi pi-check-circle" [transitionOptions]="'300ms'">
         <ng-template pTemplate="footer">
             <!-- <button type="button" pButton class="bg-secondary-one" style="border-color: black;" label="Seguir comprando" (click)="cd.reject()"></button> -->
-            <button type="button" pButton class="bg-black" style="border-color: black;" label="Cerrar"
+            <button type="button" pButton  style="border-color: black;" label="Cerrar"
                 (click)="ce.accept()"></button>
         </ng-template>
     </p-confirmDialog>
 
     <p-confirmDialog #cb key="buy" header="Información" icon="pi pi-info-circle" [transitionOptions]="'300ms'">
         <ng-template pTemplate="footer">
-            <button type="button" pButton class="bg-secondary-one" style="border-color: black;" label="Cancelar"
+            <button type="button" pButton  style="border-color: black;" label="Cancelar"
                 (click)="cb.reject()"></button>
-            <button type="button" pButton class="bg-black" style="border-color: black;" label="Confirmar"
+            <button type="button" pButton  style="border-color: black;" label="Confirmar"
                 (click)="cb.accept()"></button>
         </ng-template>
     </p-confirmDialog>

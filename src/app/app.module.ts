@@ -7,6 +7,7 @@ import { PrivateModule } from './private/private.module';
 import { PublicModule } from './public/public.module';
 import { ComponentsModule } from './core/components/components.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +22,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     PrivateModule,
     PublicModule,
     HttpClientModule,
-    ComponentsModule
+    ComponentsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

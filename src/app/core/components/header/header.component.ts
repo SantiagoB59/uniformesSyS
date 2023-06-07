@@ -37,9 +37,9 @@ export class HeaderComponent implements OnInit {
       this.selectedCity.code = data.category;
     })
 
-    this.procedure.login.subscribe(() => {
+     this.procedure.login.subscribe(() => {
       this.iniSession = true;
-    })
+    }) 
   }
 
   ngOnInit(): void {
@@ -104,7 +104,6 @@ export class HeaderComponent implements OnInit {
     sessionStorage.clear();
     window.location.reload();
   }
-
 
 }
 

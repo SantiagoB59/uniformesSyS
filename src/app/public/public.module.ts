@@ -7,6 +7,9 @@ import { HomeComponent } from './home/home.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import {GalleriaModule} from 'primeng/galleria';
 import { ComponentsModule } from '../core/components/components.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -23,6 +26,8 @@ import { CalidadGarantiaComponent } from './calidad-garantia/calidad-garantia.co
 import { CambiosComponent } from './cambios/cambios.component';
 import { FormasPagoComponent } from './formas-pago/formas-pago.component';
 import { SearchComponent } from './search/search.component';
+import { RegistroComponent } from './registro/registro.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -38,6 +43,8 @@ import { SearchComponent } from './search/search.component';
     CambiosComponent,
     FormasPagoComponent,
     SearchComponent,
+    RegistroComponent,
+    LoginComponent,
   ],
   imports: [
     GalleriaModule,
@@ -49,7 +56,9 @@ import { SearchComponent } from './search/search.component';
     ComponentsModule,
     FontAwesomeModule,
     PipesModule, 
-    ReactiveFormsModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers:[
     ConfirmationService,

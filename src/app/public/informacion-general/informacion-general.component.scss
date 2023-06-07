@@ -48,4 +48,74 @@ body{
     border-color: #9747FF;
     
     }
+
+    //header
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+   
+   .tittle{
+    background: #FF7ED1;
+       width: 100%;
+       text-align: center;
+       text-shadow: 0px 3px 4px rgb(162, 162, 162);
+   }
+   
+   .tittle h1{
+       font-size: 4vw;
+       font-weight: 750;
+       width: 65%;
+       margin: 0 auto;
+       padding-bottom: 1rem;
+       border-bottom: 1px solid #000;
+   }
+   
+   .content{
+       display: flex;
+       width: 100vw;
+       background-color: #fff;
+       width: 100%;
+       justify-content: space-evenly;
+       align-items: center;
+       position: sticky;
+       top: 0;
+       z-index: 1040;
+       padding: .8rem;
+   }
+   
+   .logo .menu, .opciones{
+       display: flex;
+   }
+   
+   .menu a{
+       margin: 0 2rem;
+   }
+   
+   .opciones a{
+       margin: 0 0.5rem;
+   }
+   
+   a{
+       text-decoration: none;
+       color: #000;
+   }
+   
+   .movil{
+       display: none;
+   }
+   
+   @media screen and (max-width: 768px) {
+       .movil{
+           display: flex;
+       }
+   
+       .pc{
+           display: none;
+       }
+   
+       .menu a{
+           margin: 0 1rem;
+       }
+   }
  

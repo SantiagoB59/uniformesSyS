@@ -1,39 +1,89 @@
 <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div *ngIf="view==1">
-            <div class="inicio_session" style="height: calc(100vh - 470px);">
-                <div class="col-12">
-                    <div class="row">
-                        <form [formGroup]="viewForm1">
-                            <div class="col-12 text-center">
-                                <h1>
-                                    Inicia sesión
-                                </h1>
-                            </div>
-                            <div
-                                class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block mb-2 mt-2">
-                                <span class="p-float-label">
-                                    <input type="text" id="inputtext1" pInputText class="w-100" formControlName="email">
-                                    <label for="inputtext1">Ingresa tu correo</label>
-                                </span>
-                                <div class="error-box"
-                                    *ngIf="f1['email'].touched && f1['email'].invalid && f1['email'].errors != null">
-                                    <div class="error-message" *ngIf="f1['email'].errors['required']">Este campo requerido
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div *ngIf="view==1">
+                    <div class="login100-form validate-form flex-sb flex-w">
+                        <div class="row login100-form validate-form flex-sb flex-w " style="    margin-top: 20px;">
+                            <form [formGroup]="viewForm1">
+                                <div class="login100-form-title p-b-51">
+                                    <h1>
+                                        Inicia sesión
+                                    </h1>
+                                </div>
+                                <div class=" m-b-16">
+                                    <span class="p-float-label" style="margin-left: 20px;">
+                                        <input type="text" id="inputtext1" pInputText class="w-100"
+                                            formControlName="email">
+                                        <label for="inputtext1">Ingresa tu correo</label>
+                                    </span>
+
+                                    <div class="error-box"
+                                        *ngIf="f1['email'].touched && f1['email'].invalid && f1['email'].errors != null">
+                                        <div class="error-message" *ngIf="f1['email'].errors['required']">Este campo
+                                            requerido
+                                        </div>
+                                        <div class="error-message" *ngIf="f1['email'].errors['pattern']">Correo invalido
+                                        </div>
                                     </div>
-                                    <div class="error-message" *ngIf="f1['email'].errors['pattern']">Correo invalido</div>
+                                </div>
+
+
+                                <div class="flex-sb-m w-full p-t-3 p-b-24" style="margin-left: 20px;">
+                                    <div class="contact100-form-checkbox">
+                                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                                        <label class="label-checkbox100" for="ckb1">
+                                            Recordar mi usuario
+                                        </label>
+                                    </div>
+
+                                    <div>
+                                        <a routerLink="/registro" class="txt1">
+                                            ¿No tienes cuenta?
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="container-login100-form-btn m-t-17 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block text-center">
+                                    <button (click)="verify()" pButton type="button" label="Iniciar sesión"
+                                        class="login100-form-btn"></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tamaño">
+                            <div *ngIf="view==1">
+                                <div class="banner1">
+                                    <div class="banner1-Text">
+                                        <h1 class="texban1">
+                                            No tienes una cuenta?
+                                        </h1>
+                                        <h2>Deseas registrarte?</h2>
+                                    </div>
+                                    <div
+                                        class="container-login1001-form-btn m-t-17 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block text-center">
+                                        <button pButton (click)="registerbuton()" pButton type="button"
+                                            label="Registrate" class="login1001-form-btn align-items-center"></button>
+                                    </div>
                                 </div>
                             </div>
-                            <div
-                                class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block">
-                                <button (click)="verify()" pButton type="button" label="Iniciar sesión"
-                                    class="p-button-help"></button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
+
+
+<!-- 
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="container margin-movil">
@@ -45,19 +95,19 @@
                             </h1> 
                         <h2>Deseas registrarte?</h2>
                     </div>
-                    <button pButton (click)="registerbuton()" pButton type="button" label="Registrate"
+                    <button pButton  (click)="registerbuton()" pButton type="button" label="Registrate"
                         class="p-button-help2 align-items-center"></button>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <div class="container margin-movil">
     <div class="row text-center animate__animated animate__fadeIn" *ngIf="view==1 || view==2">
     </div>
-    
+
     <div *ngIf="view==2">
         <div class="row align-items-center animate__animated animate__fadeIn" style="height: calc(100vh - 470px);">
             <div class="col-12">
@@ -66,34 +116,32 @@
                         <div class="col-12 text-center">
                             <div class="contraseña">
                                 <h1>
-                                     Ingresa tu Contraseña
+                                    Ingresa tu Contraseña
                                 </h1>
-                        </div><br>
-                        <div
-                            class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block mb-2 mt-2">
-                            <div class="col-12 text-center">
-                                <span class="p-float-label">
-                                    <input type="password" id="inputtext2" pInputText class="w-100"
-                                        formControlName="password">
-                                    <label for="inputtext2">Contraseña</label>
-                                </span>
-                            </div>
+                            </div><br>
+                            <div
+                                class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block mb-2 mt-2">
+                                <div class="col-12 text-center">
+                                    <span class="p-float-label">
+                                        <input type="password" id="inputtext2" pInputText class="w-100"
+                                            formControlName="password">
+                                        <label for="inputtext2">Contraseña</label>
+                                    </span>
+                                </div>
 
-                            <div class="error-box"
-                                *ngIf="f2['password'].touched && f2['password'].invalid && f2['password'].errors != null">
-                                <div class="error-message" *ngIf="f2['password'].errors['required']">Este campo
-                                    requerido</div>
+                                <div class="error-box"
+                                    *ngIf="f2['password'].touched && f2['password'].invalid && f2['password'].errors != null">
+                                    <div class="error-message" *ngIf="f2['password'].errors['required']">Este
+                                        campo
+                                        requerido</div>
+                                </div>
+                            </div>
+                            <div
+                                class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block">
+                                <button (click)="register()" pButton type="button" label="Iniciar sesión"
+                                    class="p-button-help1 btn-lg btn-block mx-auto d-block"></button>
                             </div>
                         </div>
-                        <div
-                            class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block">
-                            <button (click)="register()" pButton type="button" label="Iniciar sesión"
-                                class="p-button-help1 btn-lg btn-block mx-auto d-block"></button>
-                            <!--                             <button (click)="register()" pButton type="button" name="" id="" class="btn btn-black btn-lg btn-block mx-auto d-block">Validar contraseña</button>
- -->
-                        
-</div>
-</div>
                     </form>
                 </div>
             </div>
@@ -105,7 +153,7 @@
             <form [formGroup]="viewForm3">
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-12 text-center">
+                        <div class="col-12 text-center contraseña ">
                             <h1>
                                 <span>
                                     <fa-icon [icon]="faLeft" style="position: absolute; left: 15%; cursor: pointer;"
@@ -123,7 +171,8 @@
                             </span>
                             <div class="error-box"
                                 *ngIf="f3['type_identification'].touched && f3['type_identification'].invalid && f3['type_identification'].errors != null">
-                                <div class="error-message" *ngIf="f3['type_identification'].errors['required']">Este
+                                <div class="error-message" *ngIf="f3['type_identification'].errors['required']">
+                                    Este
                                     campo requerido</div>
                             </div>
                         </div>
@@ -149,7 +198,8 @@
                             </span>
                             <div class="error-box"
                                 *ngIf="f3['first_name'].touched && f3['first_name'].invalid && f3['first_name'].errors != null">
-                                <div class="error-message" *ngIf="f3['first_name'].errors['required']">Este campo
+                                <div class="error-message" *ngIf="f3['first_name'].errors['required']">Este
+                                    campo
                                     requerido</div>
                             </div>
                         </div>
@@ -171,7 +221,8 @@
                             </span>
                             <div class="error-box"
                                 *ngIf="f3['first_surname'].touched && f3['first_surname'].invalid && f3['first_surname'].errors != null">
-                                <div class="error-message" *ngIf="f3['first_surname'].errors['required']">Este campo
+                                <div class="error-message" *ngIf="f3['first_surname'].errors['required']">Este
+                                    campo
                                     requerido</div>
                             </div>
                         </div>
@@ -200,9 +251,11 @@
                             </span>
                             <div class="error-box"
                                 *ngIf="f3['phone'].touched && f3['phone'].invalid && f3['phone'].errors != null">
-                                <div class="error-message" *ngIf="f3['phone'].errors['required']">Este campo requerido
+                                <div class="error-message" *ngIf="f3['phone'].errors['required']">Este campo
+                                    requerido
                                 </div>
-                                <div class="error-message" *ngIf="f3['phone'].errors['pattern']">Debe ser solo numero
+                                <div class="error-message" *ngIf="f3['phone'].errors['pattern']">Debe ser solo
+                                    numero
                                 </div>
                             </div>
                         </div>
@@ -215,7 +268,8 @@
                             </span>
                             <div class="error-box"
                                 *ngIf="f3['address'].touched && f3['address'].invalid && f3['address'].errors != null">
-                                <div class="error-message" *ngIf="f3['address'].errors['required']">Este campo requerido
+                                <div class="error-message" *ngIf="f3['address'].errors['required']">Este campo
+                                    requerido
                                 </div>
                             </div>
                         </div>
@@ -227,9 +281,11 @@
                             </span>
                             <div class="error-box"
                                 *ngIf="f3['email'].touched && f3['email'].invalid && f3['email'].errors != null">
-                                <div class="error-message" *ngIf="f3['email'].errors['required']">Este campo requerido
+                                <div class="error-message" *ngIf="f3['email'].errors['required']">Este campo
+                                    requerido
                                 </div>
-                                <div class="error-message" *ngIf="f3['email'].errors['pattern']">Correo invalido</div>
+                                <div class="error-message" *ngIf="f3['email'].errors['pattern']">Correo invalido
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-5 col-xs-10 offset-xs-1 d-block my-3">
@@ -241,11 +297,14 @@
                             </span>
                             <div class="error-box"
                                 *ngIf="f3['confirm_email'].touched && f3['confirm_email'].invalid && f3['confirm_email'].errors != null">
-                                <div class="error-message" *ngIf="f3['confirm_email'].errors['required']">Este campo
+                                <div class="error-message" *ngIf="f3['confirm_email'].errors['required']">Este
+                                    campo
                                     requerido</div>
-                                <div class="error-message" *ngIf="f3['confirm_email'].errors['pattern']">Correo invalido
+                                <div class="error-message" *ngIf="f3['confirm_email'].errors['pattern']">Correo
+                                    invalido
                                 </div>
-                                <div class="error-message" *ngIf="f3['confirm_email'].errors['mustMatch']">Correos no
+                                <div class="error-message" *ngIf="f3['confirm_email'].errors['mustMatch']">
+                                    Correos no
                                     coincide</div>
                             </div>
                         </div>
@@ -259,7 +318,8 @@
                             </span>
                             <div class="error-box"
                                 *ngIf="f3['temp_password'].touched && f3['temp_password'].invalid && f3['temp_password'].errors != null">
-                                <div class="error-message" *ngIf="f3['temp_password'].errors['required']">Este campo
+                                <div class="error-message" *ngIf="f3['temp_password'].errors['required']">Este
+                                    campo
                                     requerido</div>
                             </div>
                         </div>
@@ -272,7 +332,8 @@
                             </span>
                             <div class="error-box"
                                 *ngIf="f3['confirm_password'].touched && f3['confirm_password'].invalid && f3['confirm_password'].errors != null">
-                                <div class="error-message" *ngIf="f3['confirm_password'].errors['required']">Este campo
+                                <div class="error-message" *ngIf="f3['confirm_password'].errors['required']">
+                                    Este campo
                                     requerido</div>
                                 <div class="error-message" *ngIf="f3['confirm_password'].errors['mustMatch']">
                                     Contraseñas no coinciden</div>
@@ -281,7 +342,7 @@
                         <div
                             class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-10 offset-xs-1 d-block">
                             <button (click)="registro()" type="button" name="" id=""
-                                class="btn btn-black btn-lg btn-block mx-auto d-block">Regístrate</button>
+                                class=" btn btn-black btn-lg btn-block mx-auto d-block">Regístrate</button>
                         </div>
                     </div>
                 </div>
@@ -299,7 +360,3 @@
 </p-dialog>
 
 <p-toast position="bottom-center" key="bc" life="2000"></p-toast>
-
-
-
-

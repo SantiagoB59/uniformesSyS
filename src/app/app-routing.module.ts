@@ -15,6 +15,9 @@ import { SearchComponent } from './public/search/search.component';
 import { SobreNosotrosComponent } from './public/sobre-nosotros/sobre-nosotros.component';
 import { TiemposDeEntregaComponent } from './public/tiempos-de-entrega/tiempos-de-entrega.component';
 
+
+
+
 const routes: Routes = [
   {
     path: 'home',
@@ -61,7 +64,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled', // Add options right here
+    })],
   exports: [RouterModule]
+  
 })
 export class AppRoutingModule { }

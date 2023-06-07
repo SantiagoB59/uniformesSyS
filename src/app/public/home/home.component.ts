@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
   faClose = faXmark;
   faOff = faPowerOff;
   iniSession = false;
+  contador =0;
   products: any[] = [];
-
 
   sortOptions: SelectItem[] = [];
 
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   sortField: string = '';
 
   sortKey: any = null;
-
+  estrella = "";
   category = 0;
   name = '';
   display = false;
@@ -124,6 +124,7 @@ export class HomeComponent implements OnInit {
       //alert('Debes iniciar sesión para iniciar una compra');
     }
   }
+ 
 
   addCarLocal(data: any) {
     this.display2=true;
@@ -242,6 +243,8 @@ export class HomeComponent implements OnInit {
     sessionStorage.clear();
     window.location.reload();
   }
+
+
 
 }
 

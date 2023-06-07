@@ -4,13 +4,15 @@ import { HeaderComponent } from './header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
 import { ModulesModule } from '../modules/modules.module';
+import { WppButtonComponent } from './wpp-button/wpp-button.component';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    WppButtonComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { ModulesModule } from '../modules/modules.module';
   ],
   exports:[
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    WppButtonComponent
   ],
   providers: [
   ]

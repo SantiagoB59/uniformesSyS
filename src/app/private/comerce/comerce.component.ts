@@ -21,10 +21,11 @@ export class ComerceComponent implements OnInit {
   faClose = faXmark;
   faOff = faPowerOff;
   textSearch = '';
+  
   products: Product[] = [];
   cities: City[] = [];
   selectedCity: City = <City>{};
-
+  iniSession = false;
   sortOptions: SelectItem[] = [];
 
   sortOrder: number = 0;
@@ -69,6 +70,9 @@ export class ComerceComponent implements OnInit {
   //         numScroll: 1
   //     }
   // ];
+  this.procedure.login.subscribe(() => {
+    this.iniSession = true;
+  })
     this.activatedRouter.queryParams.subscribe((params:any)=>{
       if(params.textSearch!=null&&params.textSearch!=undefined){
         if(params.textSearch!=''){
@@ -90,7 +94,9 @@ export class ComerceComponent implements OnInit {
     this.procedure.search.subscribe((res) => {
       this.category = res.category;
       this.name = res.name;
+      
     })
+
    }
 
   ngOnInit() {
@@ -136,7 +142,6 @@ export class ComerceComponent implements OnInit {
     ];
     this.primengConfig.ripple = true;
   }
-
 
   search(){
     const data = {
@@ -265,7 +270,15 @@ export class ComerceComponent implements OnInit {
     });
     }
 
-  
+    existUser(){
+      if(sessionStorage.getItem('data')){
+        this.iniSession= true;
+      }
+    }
+    closeSession(){
+      sessionStorage.clear();
+      window.location.reload();
+    }
 
 }
 
